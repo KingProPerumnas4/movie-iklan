@@ -10,7 +10,7 @@ export function CopyUrlButton({ slug }: { slug: string }) {
     <button
       type="button"
       onClick={async () => {
-        await navigator.clipboard.writeText(`http://localhost:3000/movies/${slug}`);
+        await navigator.clipboard.writeText(`${window.location.origin}/movies/${slug}`);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       }}

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL("https://movie-iklan.vercel.app"),
   title: { default: "Movie & Iklan", template: "%s | Movie & Iklan" },
   description: "Koleksi movie dan iklan terbaru",
   openGraph: {
