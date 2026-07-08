@@ -39,7 +39,7 @@ export default async function MovieDetailPage({
   const { slug } = await params;
   const movie = await prisma.movie.findUnique({ where: { slug } });
   const [iklan] = await prisma.$queryRawUnsafe<Array<{ link: string }>>(
-    "SELECT link FROM Iklan ORDER BY RANDOM() LIMIT 1"
+    'SELECT link FROM "Iklan" ORDER BY RANDOM() LIMIT 1'
   );
 
   if (!movie) notFound();

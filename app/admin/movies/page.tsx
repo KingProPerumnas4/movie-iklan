@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { DeleteMovieButton } from "@/components/DeleteMovieButton";
+import { CopyUrlButton } from "@/components/CopyUrlButton";
 import { Plus, Pencil, Search } from "lucide-react";
 
 export default async function MoviesPage({
@@ -63,7 +64,7 @@ export default async function MoviesPage({
           <TableBody>
             {movies.map((movie) => (
               <TableRow key={movie.id} className="group cursor-pointer">
-                <TableCell>
+                <TableCell className="relative group/cell">
                   <a href={`/movies/${movie.slug}`} target="_blank" rel="noopener noreferrer">
                     <Image
                       src={movie.gambar}
@@ -73,6 +74,7 @@ export default async function MoviesPage({
                       className="size-12 rounded object-cover"
                     />
                   </a>
+                  <CopyUrlButton slug={movie.slug} />
                 </TableCell>
                 <TableCell>
                   <a
